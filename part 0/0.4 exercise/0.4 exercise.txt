@@ -1,0 +1,19 @@
+browser->server: HTTPS Post https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTML code of  GET https://studies.cs.helsinki.fi/exampleapp/notes
+browser->server: HTTPS GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser:  CSS code of main.css
+browser->server: HTTPS GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js code
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTPS GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: Object { content: "hola mundo", date: "2022-02-16T21:46:04.020Z" }
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note

@@ -1,0 +1,19 @@
+browser->server: HTTPS GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML code of  GET https://studies.cs.helsinki.fi/exampleapp/spa
+browser->server: HTTPS GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser:  CSS code of main.css https://studies.cs.helsinki.fi/exampleapp/main.css
+browser->server: HTTPS GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: JS code spa.js of https://studies.cs.helsinki.fi/exampleapp/spa.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTPS GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: Get the list of notes from the .json file
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
