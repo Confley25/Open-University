@@ -1,0 +1,3 @@
+browser->server: HTTPS POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa {content:"elodante save me", date:"2022-02-17T15:16:11.310Z" }
+server-->browser: answer JSON {"message":"note created"}
+
