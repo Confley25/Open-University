@@ -1,43 +1,20 @@
-import React from 'react'
+import React from "react";
 
-const successStyle = {
-  color: 'green',
-  background: 'lightgrey',
-  font_size: 20,
-  border_style: 'solid',
-  border_radius: 5,
-  padding: 10,
-  margin_bottom: 10
-}
-
-const errorStyle = {
-  color: 'red',
-  background: 'lightgrey',
-  font_size: 20,
-  border_style: 'solid',
-  border_radius: 5,
-  padding: 10,
-  margin_bottom: 10
-}
-
-const Notification = ({ message }) => {
-    if (message === null) {
-      return null
-    }
-
-    if (message.includes('ERROR')){
-      return (
-        <div style={errorStyle} className="error">
-          {message}
-        </div>
-      )
-    } else {
-      return (
-        <div style={successStyle} className="error">
-          {message}
-        </div>
-      )
-    }
+const Notification = ({ status, content }) => {
+  const errorStyle = {
+    color: status === "ok" ? "green" : "red",
+    background: "lightgrey",
+    fontSize: 20,
+    borderStyle: "solid",
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 10,
+  };
+  if (content) {
+    return <li style={errorStyle}>{content}</li>;
+  } else {
+    return <div></div>;
   }
+};
 
-export default Notification
+export default Notification;
